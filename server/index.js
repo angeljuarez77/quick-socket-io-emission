@@ -20,6 +20,7 @@ io.on('connection', (socket) => {
   console.log('a user connected socket id: ' + socket.id);
   socket.on("send message", (message) => {
     console.log(`message received from the frontend: ${message}`)
+    socket.emit('message received', message);
   });
 });
 
